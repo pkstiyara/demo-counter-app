@@ -8,8 +8,9 @@ pipeline {
             }
         }
         stage ('Unit Testing') {
-            
+
             steps {
+                sh 'cd var/lib/jenkins/workspace/Demoapplication'
                 sh 'mvn test'
             }
         }
