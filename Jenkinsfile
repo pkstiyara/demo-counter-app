@@ -27,7 +27,7 @@ pipeline {
 
             }
         }
-        stage('Docker Image Build'){
+        stage ('Docker Image Build'){
             steps{
                 script {
                     sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID'
@@ -36,8 +36,8 @@ pipeline {
             }
         }
         stage ('push image to the dockerHub'){
-            steps{
-                script{
+            steps {
+                script {
                     withCredentials([string(credentialsId: 'git_creds', variable: 'docker_hub_cred')]) 
                     {
                         sh 'docker login -u pkstiyara -p $(docker_hub_cred)'
