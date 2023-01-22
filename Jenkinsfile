@@ -7,10 +7,9 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/pkstiyara/demo-counter-app.git'
             }
         }
-        stage ('Unit Testing') {
-
+        stage ('Integration Testing') {
             steps {
-                sh 'mvn test'
+                sh 'mvn verify -DskipUnitTests'
             }
         }
     }
