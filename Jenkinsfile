@@ -21,12 +21,7 @@ pipeline {
             steps{
                 sh 'mvn clean install'
             }
-        }
-        stage ('Static Code analysis'){
-            steps{
-
-            }
-        }
+    
         stage ('Docker Image Build'){
             steps{
                 script {
